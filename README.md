@@ -46,13 +46,21 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
      - Training Data has 19 features with null values
      - Test Data has 33 features with null values
      - Upon review of each feature along with the data description provided, 4 approaches were applied to deal with the null values.
-       - Columns where missing values actually mean None. Null values will be replaced with "None".
-         - PoolQC, MiscFeature, Alley, Fence, FireplaceQu, GarageType, GarageFinish, GarageQual, GarageCond, BsmtQual, BsmtCond, BsmtExposure, BsmtFinType1, BsmtFinType2,      MasVnrType
- 2. Numerical columns where missing values actually mean 0. Null values will be replaced with "0".
- 3. Columns that missing data is not possible and low number of missing data. Null values to be filled with column mode.
- 4. Critical data that can be related with another column. Null values to be filled with mode value of the highly correlable column.
-   - Data inspected for invalid data i.e. presence of outliers. Outliers then reviewed and dropped 5 rows of data with invalid Salary data i.e. Zero Salary)
+       - Columns where missing values actually mean None. Null values will be replaced with "None" in both Train & Test Data
+         - PoolQC, MiscFeature, Alley, Fence, FireplaceQu, GarageType, GarageFinish, GarageQual, GarageCond, BsmtQual, BsmtCond, BsmtExposure, BsmtFinType1, BsmtFinType2, MasVnrType.
+       - Numerical columns where missing values actually mean 0. Null values will be replaced with "0" in Train and Test Data respectively.
+           - Train Data : GarageYrBlt, MasVnrArea
+           - Test Data : BsmtFinSF1, BsmtFinSF2, BsmtUnfSF, TotalBsmtSF, BsmtFullBath, BsmtHalfBath, GarageYrBlt, GarageArea, GarageCars, MasVnrArea
+       - Columns that missing data is not possible and low number of missing data. Null values to be filled with column mode in Train and Test Data respectively.
+           - Train Data : Electrical
+           - Test Data : Exterior1st, Exterior2nd, Functional, KitchenQual, SaleType, Utilities
+       - Critical data that can be related with another column. Null values to be filled with mode value of the highly correlable column in both Train & Test Data.
+           - LotFrontage
+   - Data inspected for invalid data i.e. presence of outliers. 
+     - No SalePrice below the lower bounds in the training data
+     - 61 houses with Sale Price higher than the upper bounds are valid data. In Residential Low Density Areas and LotAreas higher than the mean LotArea Size.
+     - Based on scatter plots the following features have outliers, hence outliers were dropped from the features.
+       - LotFrontage (> 200), Lot Area (> 100000), BsmtFinSF1 (> 4000), TotalBsmtSF (>4000), 1stFlrSF (> 4000)
 5. Explore data
-   - Summarize Numerical and Categorical variables. Confirmed jobId is a unique identifier for the job posting.
    - Review Correlation between each feature and the target variable using plots and feature counts as required.
    - Identify correlation between all features respectively by using label encoding categorical features with the mean salary. Snapshot of produced heatmap below. 
