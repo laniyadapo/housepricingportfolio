@@ -2,8 +2,8 @@
 WORK IN PROGRESS
 
 <figure class="half" style="display:flex">
-    <img style="width:400px" src="images/SoldHouse.jpg">
-    <img style="width:400px" src="images/importance.jpg">
+    <img style="width:200px" src="images/SoldHouse.jpg">
+    <img style="width:200px" src="images/importance.jpg">
     <figcaption>Hello</figcaption>
 </figure>
 
