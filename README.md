@@ -1,6 +1,12 @@
 # House Pricing Prediction Portfolio
 WORK IN PROGRESS
 
+<figure class="half" style="display:flex">
+    <img style="width:400px" src="images/SoldHouse.jpg">
+    <img style="width:400px" src="images/importance.jpg">
+    <figcaption>Hello</figcaption>
+</figure>
+
 <p align="center">
   <img src="images/SoldHouse.jpg"width="400" height="400">
 </p>  
