@@ -2,7 +2,7 @@
 WORK IN PROGRESS
 
 <p align="center">
-  <img src="images/salary-img.jpg"width="400" height="400">
+  <img src="images/SoldHouse.jpg"width="400" height="400">
 </p>  
 
 
