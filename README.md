@@ -46,7 +46,7 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
      - Training Data has 19 features with null values
      - Test Data has 33 features with null values
      
-     <img src = "images/SoldHouse.jpg" width ="400" /> <img src = "images/importance.jpg" width ="400" />
+     <img src = "images/Nullvalues_Train.jpg" width ="400" /> <img src = "images/Nullvalues_Test.jpg" width ="400" />
      
      - Upon review of each feature along with the data description provided, 4 approaches were applied to deal with the null values.
        - Columns where missing values actually mean None. Null values will be replaced with "None" in both Train & Test Data
