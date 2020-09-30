@@ -1,11 +1,7 @@
 # House Pricing Prediction Portfolio
 WORK IN PROGRESS
 
-<figure class="half" style="display:flex">
-    <img style="width:200px" src="images/SoldHouse.jpg">
-    <img style="width:200px" src="images/importance.jpg">
-    <figcaption>Hello</figcaption>
-</figure>
+
 
 <p align="center">
   <img src="images/SoldHouse.jpg"width="400" height="400">
@@ -51,6 +47,9 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
    - Datasets have null values
      - Training Data has 19 features with null values
      - Test Data has 33 features with null values
+     
+     <img src = "images/SoldHouse.jpg" width ="400" /> <img src = "images/importance.jpg" width ="400" />
+     
      - Upon review of each feature along with the data description provided, 4 approaches were applied to deal with the null values.
        - Columns where missing values actually mean None. Null values will be replaced with "None" in both Train & Test Data
          - PoolQC, MiscFeature, Alley, Fence, FireplaceQu, GarageType, GarageFinish, GarageQual, GarageCond, BsmtQual, BsmtCond, BsmtExposure, BsmtFinType1, BsmtFinType2, MasVnrType.
@@ -63,6 +62,7 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
        - Critical data that can be related with another column. Null values to be filled with mode value of the highly correlable column in both Train & Test Data.
            - LotFrontage
    - Data inspected for invalid data i.e. presence of outliers. 
+     <img src = "images/outlier_plot.jpg" width ="400" />
      - No SalePrice below the lower bounds in the training data
      - 61 houses with Sale Price higher than the upper bounds are valid data. In Residential Low Density Areas and LotAreas higher than the mean LotArea Size.
      - Based on scatter plots the following features have outliers, hence outliers were dropped from the features.
@@ -70,3 +70,5 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
 5. Explore data
    - Review Correlation between each feature and the target variable using plots and feature counts as required.
    - Identify correlation between all features respectively by using label encoding categorical features with the mean salary. Snapshot of produced heatmap below. 
+   
+ 
