@@ -75,6 +75,7 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
      <p align="center">
      <img src="images/num_corr.jpg"width="600" height="600">
      </p>
+     
      - The heat map shows OverallQual, GrLivArea, FullBath, GarageCars have the highest correlation to SalePrice in that order
      - Drop the following featurs with high multicolinearity with other features.
        - GarageArea, IstFlrSF, GarageYrBlt, TotRmsAbvGrd.
@@ -83,7 +84,7 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
    - Review correlation between all categorical features respectively by using label encoding with the mean SalePrice. Snapshot of produced heatmap below. 
      
      <p align="center">
-     <img src="images/cat_corr.jpg"width="600" height="600">
+     <img src="images/cat_corr.jpg"width="700" height="700">
      </p>
      
      - The heat map shows Neighborhood, ExternalQual, BsmtQual, KitchenQual have the highest correlation to SalePrice
