@@ -4,7 +4,7 @@ WORK IN PROGRESS
 
 
 <p align="center">
-  <img src="images/SoldHouse.jpg"width="400" height="400">
+  <img src="images/homedefinition.jpg"width="400" height="400">
 </p>  
 
 
@@ -61,13 +61,17 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
            - Test Data : Exterior1st, Exterior2nd, Functional, KitchenQual, SaleType, Utilities
        - Critical data that can be related with another column. Null values to be filled with mode value of the highly correlable column in both Train & Test Data.
            - LotFrontage
-   - Data inspected for invalid data i.e. presence of outliers. 
-     <img src = "images/outlier_plot.jpg" width ="400" />
+   - Data inspected for invalid data i.e. presence of outliers.
+     
+      <p align="center">
+     <img src="images/outlier_plot.jpg"width="400" height="400">
+     </p> 
+     
      - No SalePrice below the lower bounds in the training data
      - 61 houses with Sale Price higher than the upper bounds are valid data. In Residential Low Density Areas and LotAreas higher than the mean LotArea Size.
      - Based on scatter plots the following features have outliers, hence outliers were dropped from the features.
        - LotFrontage (> 200), Lot Area (> 100000), BsmtFinSF1 (> 4000), TotalBsmtSF (>4000), 1stFlrSF (> 4000)
-5. Explore data
+4. Explore data
    - Review Correlation between each feature and the target variable using plots and feature counts as required.
    - Identify correlation between all features respectively by using label encoding categorical features with the mean salary. Snapshot of produced heatmap below. 
    
