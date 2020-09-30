@@ -1,8 +1,6 @@
 # House Pricing Prediction Portfolio
 WORK IN PROGRESS
 
-
-
 <p align="center">
   <img src="images/homedefinition.jpg"width="400" height="400">
 </p>  
@@ -64,7 +62,7 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
    - Data inspected for invalid data i.e. presence of outliers.
      
       <p align="center">
-     <img src="images/outlier_plot.jpg"width="400" height="400">
+     <img src="images/outlier_plot.jpg"width="300" height="300">
      </p> 
      
      - No SalePrice below the lower bounds in the training data
@@ -72,7 +70,24 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
      - Based on scatter plots the following features have outliers, hence outliers were dropped from the features.
        - LotFrontage (> 200), Lot Area (> 100000), BsmtFinSF1 (> 4000), TotalBsmtSF (>4000), 1stFlrSF (> 4000)
 4. Explore data
-   - Review Correlation between each feature and the target variable using plots and feature counts as required.
-   - Identify correlation between all features respectively by using label encoding categorical features with the mean salary. Snapshot of produced heatmap below. 
-   
- 
+   - Review Correlation between each numerical feature and the target variable using plots.Snapshot of produced heatmap below.
+     
+     <p align="center">
+     <img src="images/num_corr.jpg"width="600" height="600">
+     </p>
+     - The heat map shows OverallQual, GrLivArea, FullBath, GarageCars have the highest correlation to SalePrice in that order
+     - Drop the following featurs with high multicolinearity with other features.
+       - GarageArea, IstFlrSF, GarageYrBlt, TotRmsAbvGrd.
+     - Drop features with less than 30% correlation to the target variable (SalePrice)
+       - MSSubClass,  OverallCond, BsmtFinSF2, BsmtUnfSF, LowQualFinSF, BsmtFullBath, BsmtHalfBath, BedroomAbvGr, KitchenAbvGr, EnclosedPorch, 3SsnPorch, ScreenPorch, PoolArea, MiscVal, MoSold, YrSold.
+   - Review correlation between all categorical features respectively by using label encoding with the mean SalePrice. Snapshot of produced heatmap below. 
+     
+     <p align="center">
+     <img src="images/cat_corr.jpg"width="600" height="600">
+     </p>
+     
+     - The heat map shows Neighborhood, ExternalQual, BsmtQual, KitchenQual have the highest correlation to SalePrice
+     - Drop Features with multicolinealirity with other features.
+       - SaleCondition & Exterior2nd
+     - Drop features with less than 30% correlation to the target variable (SalePrice)
+       - Street, Alley, LandContour, Utilities, LotConfig, LandSlope, Condition1, Condition2, BldgType, RoofStyle, RoofMatl, ExterCond, BsmtCond, BsmtFinType2, Heating, CentralAir, Electrical, Functional, PavedDrive, PoolQC, Fence, MiscFeature. 
