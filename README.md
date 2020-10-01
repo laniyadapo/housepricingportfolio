@@ -178,7 +178,7 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
 Model | Score
 ------------ | -------------
 LassoRegressor | MAE: ~0.137592
-RandomForestRegressor | MAE: ~0.100633
+RandomForestRegressor | MAE: ~0.100751
 GradientBoostingRegressor | MAE: ~0.097434
 RidgeRegressor | MAE: ~ 0.095744 
 4. Test models
@@ -191,7 +191,7 @@ RidgeRegressor | MAE: ~ 0.095744
 Model | Score
 ------------ | -------------
 LassoRegressor | MAE: ~0.129181
-RandomForestRegressor | MAE: ~0.089775
+RandomForestRegressor | MAE: ~0.089335
 GradientBoostingRegressor | MAE: ~0.089001
 RidgeRegressor | MAE: ~ 0.093270 
 
@@ -227,3 +227,4 @@ It is critical that the buyer and seller are happy with the agreed SalePrice of 
   <img src="images/SoldHouse.jpg"width="400" height="400">
 </p>  
 
+The predicted SalePrice column in the csv deliverable will be useful for real estate stakeholders.
