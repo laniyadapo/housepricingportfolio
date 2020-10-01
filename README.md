@@ -153,3 +153,26 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
      - Ridge and Lasso Regression - powerful techniques for creating parsmonious models in the presence of a 'large' number of features.
      - Random Forest Regressor - improves the accuracy by reducing overfitting problem and the variance in decision trees.
      - GradientBoostingRegressor - typically produces best predictions because it can optimize on different loss functions and provides several hyperparameter tuning options that make the function fit very flexible.    
+
+### MODEL DEVELOPMENT 
+1. Feature Engineering
+   - Transform categorical features into individual binary feature using the one hot encoding approach.
+   - Split transformed data into train and test data for use during model creation and evaluation process.
+2. Create models
+   - All models are created in this section
+   - Hypertuning of models were done using Google Colab for the random forest and Gradient Boost Model was tuned in the notebook.
+3. Evaluate Models 
+   - Each model was evaluated using optimal parameters derived.
+4. Test models
+   - Models were tested using the split test data from the transformed merged data.
+
+<p align="center">
+  <img src="images/model_eval.jpg"width="400" height="400">
+</p> 
+
+Model | Reasoning
+------------ | -------------
+BENCHMARK – LinearRegression | MSE: ~384.6
+LinearRegression (with interaction) | MSE: ~354.7
+RandomForestRegressor | MSE: ~368.3
+BEST - GradientBoostingRegressor | MSE: ~ 359.9 
