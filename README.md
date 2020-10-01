@@ -84,7 +84,7 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
    - Review the relationship between the numerical features and the target variable (SalePrice)
      
      <p align="center">
-     <img src="images/num_plot_postdrop.jpg"width="425" >
+     <img src="images/num_plot_postdrop.jpg"width="600" >
      </p>
      
      - Majority of the numerical features have a postive correlation to the target variable ranging from weak to strong.
@@ -109,6 +109,24 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
      <img src="images/cat_plot_page5.jpg"width="425" >
      </p>
      
-     - The heat map shows Neighborhood, ExternalQual, BsmtQual, KitchenQual have the highest correlation to SalePrice
-     - Drop Features with multicolinealirity with other features.
-       - SaleCondition & Exterior2nd
+     - Plots shows the relationship between categorical features and SalePrice. Some features have similar grading system. This will be explored for feature engineering.
+ - Review skewness and distributions of the numerical features and target variable in training data.
+     
+     <p align="center">
+     <img src="images/num_skewness.jpg"width="600" height="600">
+     </p>
+     
+     - There are 3 features identified with uni-modal, skewed distributions which could be considered for log transformation,
+       - SalePrice, LotArea & GrLivArea
+     - Skew of SalePrice and Log-Transformed SalePrice in training data explored.
+     
+     <p align="center">
+     <img src="images/salepricelog.jpg"width="500" height="300 >
+     </p>
+ 
+ - Review skewness and distributions of the numerical features in testing data.
+     
+     <p align="center">
+     <img src="images/num_skewness_test.jpg"width="600" height="600">
+     </p>
+     
