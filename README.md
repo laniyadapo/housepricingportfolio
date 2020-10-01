@@ -115,11 +115,11 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
  - Review skewness and distributions of the numerical features and target variable in training data.
      
       <p align="center">
-     <img src="images/num_skewness.jpg"width="425" >
+     <img src="images/num_skewness.jpg"width="600" >
      </p>
      
      <p align="center">
-     <img src="images/num_skewness_test.jpg"width="425" >
+     <img src="images/num_skewness_test.jpg"width="600" >
      </p>
         
      - There are 3 features identified with uni-modal, skewed distributions which could be considered for log transformation,
@@ -146,8 +146,10 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
       
    - The next step is to improve the MAE values.
 7. Hypothesize solutions
-   - A suite of regression supervised learning algorithms are selected to improve the MSE metric with the training data.
-     - Linear Regression - simple to implement and easier to interpret the output coefficients.
-     - Linear Regression with Interaction variables - explore the significance of relationships between various features.
+   - Considering the baseline model predictions are based on data provided without extensive feature generation or model tuning we will perform some feature engineering and cross validation to improve the scores before selecting the best model.
+
+     The SalePrice prediction expected output is a continuous value hence we will use from the suite of regression supervised learning algorithms.
+   - A suite of regression supervised learning algorithms are selected to improve the MAE metric with the training data.
+     - Ridge and Lasso Regression - powerful techniques for creating parsmonious models in the presence of a 'large' number of features.
      - Random Forest Regressor - improves the accuracy by reducing overfitting problem and the variance in decision trees.
-     - GradientBoostingRegressor - Typically produces best predictions because it can optimize on different loss functions and provides several hyperparameter tuning options that make the function fit very flexible.    
+     - GradientBoostingRegressor - typically produces best predictions because it can optimize on different loss functions and provides several hyperparameter tuning options that make the function fit very flexible.    
