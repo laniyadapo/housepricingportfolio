@@ -155,7 +155,7 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
      - GradientBoostingRegressor - typically produces best predictions because it can optimize on different loss functions and provides several hyperparameter tuning options that make the function fit very flexible.    
 
 ### MODEL DEVELOPMENT 
-1. Feature Engineering
+1. Feature Engineering on Training data
    - Log-Tranform target variable (SalePrice) to fix skewness observed in data in section 2.4.6.1
    - Convert datatypes for the following features with integer but actually string in nature from data description. 
      - OverallQual
@@ -194,3 +194,29 @@ LassoRegressor | MAE: ~0.129181
 RandomForestRegressor | MAE: ~0.089775
 GradientBoostingRegressor | MAE: ~0.089001
 RidgeRegressor | MAE: ~ 0.093270 
+
+5. Select best model
+   - LinearRegression (with interaction) model has the lowest MSE, hence it is selected for the salary prediction with the test dataset
+
+### MODEL DEPLOYMENT
+
+1. Train best model selected on the entire training data.
+2. Score the Test Dataset
+   - Create new feature "HouseAge" using the YearBuilt feature.
+   - Convert datatypes for the following features with integer but actually string in nature from data description. 
+     - OverallQual
+   - Convert some of the categorical values to numeric based on data description.
+     - Neighborhood, ExterQual, BsmtQual, FireplaceQu, GarageCond, GarageQual, BsmtFinType1, HeatingQC, KitchenQual, GarageFinish, BsmtExposure
+   - Encode all categorical features
+   - Normalize all numeric feature in preparation for modeling
+   - Confirm test data matches the shape of the train dataset 
+   - Deploy the model on the test data to predict SalePrice
+   - Combine the test data 'Id' and the predicted SalePrice into a dataframe
+   - Combine the original test data with the predicted SalePrice and export to csv as a deliverable
+3. Feature Importance
+   - Define function
+   - Derive feature importance
+
+<p align="center">
+  <img src="images/importance.jpg"width="400" height="400">
+</p>  
