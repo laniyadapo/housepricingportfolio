@@ -218,5 +218,12 @@ RidgeRegressor | MAE: ~ 0.093270
    - Derive feature importance
 
 <p align="center">
-  <img src="images/importance.jpg"width="400" height="400">
+  <img src="images/importance.jpg"width="500" height="400">
 </p>  
+
+It is critical that the buyer and seller are happy with the agreed SalePrice of a house.
+
+<p align="center">
+  <img src="images/SoldHouse.jpg"width="400" height="400">
+</p>  
+
