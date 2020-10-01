@@ -145,7 +145,7 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
    RidgeRegressor | MAE: ~ 17836
       
    - The next step is to improve the MAE values.
-7. Hypothesize solutions
+6. Hypothesize solutions
    - Considering the baseline model predictions are based on data provided without extensive feature generation or model tuning we will perform some feature engineering and cross validation to improve the scores before selecting the best model.
 
      The SalePrice prediction expected output is a continuous value hence we will use from the suite of regression supervised learning algorithms.
@@ -156,23 +156,41 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
 
 ### MODEL DEVELOPMENT 
 1. Feature Engineering
-   - Transform categorical features into individual binary feature using the one hot encoding approach.
+   - Log-Tranform target variable (SalePrice) to fix skewness observed in data in section 2.4.6.1
+   - Convert datatypes for the following features with integer but actually string in nature from data description. 
+     - OverallQual
+   - Convert some of the categorical values to numeric based on data description.
+     - Neighborhood, ExterQual, BsmtQual, FireplaceQu, GarageCond, GarageQual, BsmtFinType1, HeatingQC, KitchenQual, GarageFinish, BsmtExposure
+   - Create new fearute "HouseAge" using the YearBuilt feature.
+   - Normalize all numeric feature in preparation for modeling
+   - Encode all categorical features
    - Split transformed data into train and test data for use during model creation and evaluation process.
 2. Create models
    - All models are created in this section
-   - Hypertuning of models were done using Google Colab for the random forest and Gradient Boost Model was tuned in the notebook.
+   - Hypertuning of models were done using the GridSearch method.
 3. Evaluate Models 
-   - Each model was evaluated using optimal parameters derived.
+   - Each model was evaluated with cross validation technique using optimal parameters derived.
+     
+<p align="center">
+  <img src="images/crossval.jpg"width="400" height="400">
+</p> 
+
+Model | Score
+------------ | -------------
+LassoRegressor | MAE: ~0.137592
+RandomForestRegressor | MAE: ~0.100633
+GradientBoostingRegressor | MAE: ~0.097434
+RidgeRegressor | MAE: ~ 0.095744 
 4. Test models
    - Models were tested using the split test data from the transformed merged data.
 
 <p align="center">
-  <img src="images/model_eval.jpg"width="400" height="400">
+  <img src="images/modeltest.jpg"width="400" height="400">
 </p> 
 
-Model | Reasoning
+Model | Score
 ------------ | -------------
-BENCHMARK – LinearRegression | MSE: ~384.6
-LinearRegression (with interaction) | MSE: ~354.7
-RandomForestRegressor | MSE: ~368.3
-BEST - GradientBoostingRegressor | MSE: ~ 359.9 
+LassoRegressor | MAE: ~0.129181
+RandomForestRegressor | MAE: ~0.089775
+GradientBoostingRegressor | MAE: ~0.089001
+RidgeRegressor | MAE: ~ 0.093270 
