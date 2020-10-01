@@ -98,6 +98,8 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
      - Drop Features with multicolinealirity with other features.
        - SaleCondition & Exterior2nd
      - Drop features with less than 30% correlation to the target variable (SalePrice)
+     
+
        - Street, Alley, LandContour, Utilities, LotConfig, LandSlope, Condition1, Condition2, BldgType, RoofStyle, RoofMatl, ExterCond, BsmtCond, BsmtFinType2, Heating, CentralAir, Electrical, Functional, PavedDrive, PoolQC, Fence, MiscFeature. 
      - Review the relationship between the categorical features and the target variable (SalePrice)
      
@@ -112,9 +114,7 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
      - Plots shows the relationship between categorical features and SalePrice. Some features have similar grading system. This will be explored for feature engineering.
  - Review skewness and distributions of the numerical features and target variable in training data.
      
-     <p align="center">
-     <img src="images/num_skewness.jpg"width="600" height="600">
-     </p>
+      <img src = "images/num_skewness.jpg" width ="425" /> <img src = "images/num_skewness_test.jpg" width ="425" />
      
      - There are 3 features identified with uni-modal, skewed distributions which could be considered for log transformation,
        - SalePrice, LotArea & GrLivArea
@@ -123,10 +123,25 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
      <p align="center">
      <img src="images/salepricelog.jpg"width="500" height="300 >
      </p>
- 
- - Review skewness and distributions of the numerical features in testing data.
-     
-     <p align="center">
-     <img src="images/num_skewness_test.jpg"width="600" height="600">
-     </p>
-     
+    
+5. Establish a Baseline
+   - Using all the remaining features after data cleaning and exploration, create a baseline for all the algorithm planned to be used in the project. The mean absolute error is the metric utilised.
+   
+   <p align="center">
+     <img src="images/baseline.jpg"width="400" height="300">
+   </p>
+      
+   Model | Score
+   ------------ | -------------
+   LassoRegressor | MAE: ~17837
+   RandomForestRegressor | MAE: ~15713
+   GradientBoostingRegressor | MAE: ~15310
+   RidgeRegressor | MAE: ~ 17836
+      
+   - The next step is to improve the MAE values.
+7. Hypothesize solutions
+   - A suite of regression supervised learning algorithms are selected to improve the MSE metric with the training data.
+     - Linear Regression - simple to implement and easier to interpret the output coefficients.
+     - Linear Regression with Interaction variables - explore the significance of relationships between various features.
+     - Random Forest Regressor - improves the accuracy by reducing overfitting problem and the variance in decision trees.
+     - GradientBoostingRegressor - Typically produces best predictions because it can optimize on different loss functions and provides several hyperparameter tuning options that make the function fit very flexible.    
