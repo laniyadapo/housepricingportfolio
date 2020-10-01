@@ -134,7 +134,7 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
    - Using all the remaining features after data cleaning and exploration, create a baseline for all the algorithm planned to be used in the project. The mean absolute error is the metric utilised.
    
    <p align="center">
-     <img src="images/baseline.jpg"width="400" height="300">
+     <img src="images/baseline.jpg"width="600" height="400">
    </p>
       
    Model | Score
@@ -161,7 +161,7 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
      - OverallQual
    - Convert some of the categorical values to numeric based on data description.
      - Neighborhood, ExterQual, BsmtQual, FireplaceQu, GarageCond, GarageQual, BsmtFinType1, HeatingQC, KitchenQual, GarageFinish, BsmtExposure
-   - Create new fearute "HouseAge" using the YearBuilt feature.
+   - Create new feature "HouseAge" using the YearBuilt feature.
    - Normalize all numeric feature in preparation for modeling
    - Encode all categorical features
    - Split transformed data into train and test data for use during model creation and evaluation process.
@@ -172,7 +172,7 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
    - Each model was evaluated with cross validation technique using optimal parameters derived.
      
 <p align="center">
-  <img src="images/crossval.jpg"width="400" height="400">
+  <img src="images/crossval.jpg"width="600" height="400">
 </p> 
 
 Model | Score
@@ -185,7 +185,7 @@ RidgeRegressor | MAE: ~ 0.095744
    - Models were tested using the split test data from the transformed merged data.
 
 <p align="center">
-  <img src="images/modeltest.jpg"width="400" height="400">
+  <img src="images/modeltest.jpg"width="600" height="400">
 </p> 
 
 Model | Score
