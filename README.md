@@ -114,8 +114,14 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
      - Plots shows the relationship between categorical features and SalePrice. Some features have similar grading system. This will be explored for feature engineering.
  - Review skewness and distributions of the numerical features and target variable in training data.
      
-      <img src = "images/num_skewness.jpg" width ="425" /> <img src = "images/num_skewness_test.jpg" width ="425" />
+      <p align="center">
+     <img src="images/num_skewness.jpg"width="425" >
+     </p>
      
+     <p align="center">
+     <img src="images/num_skewness_test.jpg"width="425" >
+     </p>
+        
      - There are 3 features identified with uni-modal, skewed distributions which could be considered for log transformation,
        - SalePrice, LotArea & GrLivArea
      - Skew of SalePrice and Log-Transformed SalePrice in training data explored.
