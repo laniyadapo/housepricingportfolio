@@ -1,5 +1,4 @@
 # House Pricing Prediction Portfolio
-WORK IN PROGRESS
 
 <p align="center">
   <img src="images/homedefinition.jpg"width="400" height="400">
