@@ -43,7 +43,7 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
    - No duplicates in data as the Id feature in bothe train and test data represent a unique house information.
    - Datasets have null values
      - Training Data has 19 features with null values
-     - Test Data has 33 features with null values
+     - Testing Data has 33 features with null values
      
      <img src = "images/Nullvalues_Train.jpg" width ="600" /> <img src = "images/Nullvalues_Test.jpg" width ="600" />
      
