@@ -195,7 +195,7 @@ GradientBoostingRegressor | MAE: ~0.089001
 RidgeRegressor | MAE: ~ 0.093270 
 
 5. Select best model
-   - LinearRegression (with interaction) model has the lowest MSE, hence it is selected for the salary prediction with the test dataset
+   - GradientBoostingRegressor model has the lowest MSE, hence it is selected for the SalePrice prediction with the test dataset
 
 ### MODEL DEPLOYMENT
 
