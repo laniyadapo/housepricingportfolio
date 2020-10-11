@@ -93,18 +93,55 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
        <img src="images/NeighborhoodvsMSZoning.jpg"width="1000" >
        </p>
        
-Hypothesis #3: Properties with pool will be more expensive
-Not Confirmed. Properties with Pool does not necessarily translate to high SalePrice. Pools with Excellent PoolQC have High SalePrice.
-Hypothesis #4: The older a property is the less expensive it will be
-Confirmed, there is a gradual increase the price of recently built houses but difficult to confirm what is driving the increase, inflation or time value of money.
-Hypothesis #5: Properties with bigger Garage Area will be more expensive
-Confirmed. Properties with Bigger GarageArea and Built-in GarageType are more expensive. Althought there are more houses with Attached GarageType in the data.
-Hypothesis #6: Road access to house will affect Property SalePrice
-Confirmed. There are more houses with paved road access and no alley access in the data and they typically cost more.
-Hypothesis #7: Recently sold properties will be more expensive
-Not Confirmed. No distinct correlation on the year property was sold in relation to the SalePrice.
-Hypothesis #8: Houses with more bedrooms will be more expensive
-Confirmed. Houses with more bedroom and bathrooms tend to cost more.
+    - Hypothesis #3: Properties with pool will be more expensive
+      - Not Confirmed. Properties with Pool does not necessarily translate to high SalePrice. Pools with Excellent PoolQC have High SalePrice.
+      
+       <p align="center">
+       <img src="images/PoolArea.jpg"width="300">
+       </p>
+     
+       <p align="center">
+       <img src="images/PoolQC.jpg"width="600">
+       </p>
+       
+            
+    - Hypothesis #4: The older a property is the less expensive it will be
+      - Confirmed, there is a gradual increase the price of recently built houses but difficult to confirm what is driving the increase, inflation or time value of money.
+      
+      <p align="center">
+       <img src="images/YearBuilt.jpg"width="300" >
+       </p>
+       
+    - Hypothesis #5: Properties with bigger Garage Area will be more expensive
+      - Confirmed. Properties with Bigger GarageArea and Built-in GarageType are more expensive. Although there are more houses with Attached GarageType in the data.
+      
+       <p align="center">
+       <img src="images/GarageArea.jpg"width="300">
+       </p>
+     
+       <p align="center">
+       <img src="images/GarageType.jpg"width="600">
+       </p>
+            
+    - Hypothesis #6: Road access to house will affect Property SalePrice
+      - Confirmed. There are more houses with paved road access and no alley access in the data and they typically cost more.
+      
+     <p align="center">
+       <img src="images/Road_Alley.jpg"width="500" >
+       </p>
+      
+    - Hypothesis #7: Recently sold properties will be more expensive
+      - Not Confirmed. No distinct correlation on the year property was sold in relation to the SalePrice.
+      
+      <p align="center">
+        <img src"images/YrSold.jpg"width="300" >
+        </p>
+      
+    - Hypothesis #8: Houses with more bedrooms will be more expensive
+      - Confirmed. Houses with more bedroom and bathrooms tend to cost more.
+      
+      <img src = "images/Totalrooms.jpg" width ="300" /> <img src = "images/Fullbath.jpg" width ="300" />
+      
    - Review correlation between each numerical feature and the target variable using plots.Snapshot of produced heatmap below.
      
      <p align="center">
