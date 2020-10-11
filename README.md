@@ -262,10 +262,19 @@ RidgeRegressor | MAE: ~ 0.082026
 3. Feature Importance
    - Define function
    - Derive feature importance
+     - The top 5 important features are : OverallQualnorm, Neighborhoodnorm, GrLivAreanorm, TotalBsmtSFnorm and GarageCarsnorm.
+     - All these features have high correlation to SalePrice as discovered in the EDA section of the project.
 
 <p align="center">
   <img src="images/importance.jpg"width="500" height="400">
 </p>  
+
+4. Model Improvement Opportunities
+   - Consider using Principal Component Regression
+   - Consider performing log transformation on some of the independent variables
+   - Explore other available models
+   - Perform more EDA to identify features that can be combined to generate more direct features, for example:
+     - Total number of Bedrooms, Total number of Bathrooms , Direct feature stating pool availability or not 
 
 It is critical that the buyer and seller are happy with the agreed SalePrice of a house.
 
