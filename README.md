@@ -90,7 +90,7 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
        </p>
      
        <p align="center">
-       <img src="images/NeighborhoodvsMSZoning.jpg"width="1000" >
+       <img src="images/NeighborhoodvsMSZoning.jpg"width="1500" >
        </p>
        
     - Hypothesis #3: Properties with pool will be more expensive
@@ -150,16 +150,9 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
      
      - The heat map shows OverallQual, GrLivArea, FullBath, GarageCars have the highest correlation to SalePrice in that order
      - Drop the following featurs with high multicolinearity with other features.
-       - GarageArea, IstFlrSF, GarageYrBlt, TotRmsAbvGrd.
+       - GarageArea, 1stFlrSF, GarageYrBlt, TotRmsAbvGrd.
      - Drop features with less than 30% correlation to the target variable (SalePrice)
-       - MSSubClass,  OverallCond, BsmtFinSF2, BsmtUnfSF, LowQualFinSF, BsmtFullBath, BsmtHalfBath, BedroomAbvGr, KitchenAbvGr, EnclosedPorch, 3SsnPorch, ScreenPorch, PoolArea, MiscVal, MoSold, YrSold.
-   - Review the relationship between the numerical features and the target variable (SalePrice)
-     
-     <p align="center">
-     <img src="images/num_plot_postdrop.jpg"width="600" >
-     </p>
-     
-     - Majority of the numerical features have a postive correlation to the target variable ranging from weak to strong.
+       - BsmtFinSF2, LowQualFinSF, BsmtHalfBath, 3SsnPorch, MiscVal, MoSold, YrSold.
    - Review correlation between all categorical features respectively by using label encoding with the mean SalePrice. Snapshot of produced heatmap below. 
      
      <p align="center">
@@ -170,30 +163,14 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
      - Drop Features with multicolinealirity with other features.
        - SaleCondition & Exterior2nd
      - Drop features with less than 30% correlation to the target variable (SalePrice)
-     
-
-       - Street, Alley, LandContour, Utilities, LotConfig, LandSlope, Condition1, Condition2, BldgType, RoofStyle, RoofMatl, ExterCond, BsmtCond, BsmtFinType2, Heating, CentralAir, Electrical, Functional, PavedDrive, PoolQC, Fence, MiscFeature. 
-     - Review the relationship between the categorical features and the target variable (SalePrice)
-     
-     <img src = "images/cat_plot_page1.jpg" width ="425" /> <img src = "images/cat_plot_page2.jpg" width ="425" />
-     
-     <img src = "images/cat_plot_page3.jpg" width ="425" /> <img src = "images/cat_plot_page4.jpg" width ="425" />
-     
-     <p align="center">
-     <img src="images/cat_plot_page5.jpg"width="425" >
-     </p>
-     
-     - Plots shows the relationship between categorical features and SalePrice. Some features have similar grading system. This will be explored for feature engineering.
- - Review skewness and distributions of the numerical features and target variable in training data.
+       - Utilities and LandSlope
+   
+   - Review skewness and distributions of the numerical features and target variable in training data.
      
       <p align="center">
      <img src="images/num_skewness.jpg"width="600" >
      </p>
      
-     <p align="center">
-     <img src="images/num_skewness_test.jpg"width="600" >
-     </p>
-        
      - There are 3 features identified with uni-modal, skewed distributions which could be considered for log transformation,
        - SalePrice, LotArea & GrLivArea
      - Skew of SalePrice and Log-Transformed SalePrice in training data explored.
