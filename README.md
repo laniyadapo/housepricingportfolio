@@ -180,8 +180,8 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
      <img src="images/salepricelog.jpg"width="500" height="300 >
      </p>
      - Next stage is to go into modeling.
-### - House Pricing Prediction Model Development Notebook 3 : https://github.com/laniyadapo/housepricingportfolio/blob/master/House%20Pricing%20Prediction%20EDA%20Notebook.ipynb 
-### https://github.com/laniyadapo/housepricingportfolio/blob/master/House%20Pricing%20Prediction%20Model%20Development%20Notebook.ipynb
+### - House Pricing Prediction Model Development Notebook 3 
+### - House Pricing Prediction Model Development Notebook 3 https://github.com/laniyadapo/housepricingportfolio/blob/master/House%20Pricing%20Prediction%20Model%20Development%20Notebook.ipynb
 ### MODEL DEVELOPMENT
 5. Load and Prepare Data for Modelling
    - Encoding categorical featues using dummy variable coding technique.
