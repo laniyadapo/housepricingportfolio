@@ -234,7 +234,7 @@ RandomForestRegressor | MAE: ~0.099186
 GradientBoostingRegressor | MAE: ~0.090131
 RidgeRegressor | MAE: ~ 0.089059 
 4. Test models
-   - Models were tested using the split test data from the transformed merged data.
+   - Models were tested using the split test data.
 
 <p align="center">
   <img src="images/modeltest.jpg"width="600" height="400">
