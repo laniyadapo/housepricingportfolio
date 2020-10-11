@@ -179,11 +179,11 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
      <p align="center">
      <img src="images/salepricelog.jpg"width="500" height="300 >
      </p>
-     
      - Next stage is to go into modeling.
-
-### - House Pricing Prediction Model Development Notebook 3 of 3: https://github.com/laniyadapo/housepricingportfolio/blob/master/House%20Pricing%20Prediction%20Model%20Development%20Notebook.ipynb 
-
+### - House Pricing Prediction Model Development Notebook 3 : https://github.com/laniyadapo/housepricingportfolio/blob/master/House%20Pricing%20Prediction%20EDA%20Notebook.ipynb 
+### https://github.com/laniyadapo/housepricingportfolio/blob/master/House%20Pricing%20Prediction%20Model%20Development%20Notebook.ipynb
+### MODEL DEVELOPMENT
+### - House Pricing Prediction Model Development Notebook 3 of 3: 
 ### MODEL DEVELOPMENT    
 5. Load and Prepare Data for Modelling
    - Encoding categorical featues using dummy variable coding technique.
@@ -209,8 +209,7 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
    RidgeRegressor | MAE: ~ 20345
       
    - The next step is to improve the MAE values.
-     
-### MODEL DEVELOPMENT 
+      
 - Considering the baseline model predictions are based on data provided without extensive feature generation or model tuning we will perform some feature engineering and cross validation to improve the scores before selecting the best model.
 
 1. Feature Engineering on Training data
