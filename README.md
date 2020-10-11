@@ -183,8 +183,6 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
 ### - House Pricing Prediction Model Development Notebook 3 : https://github.com/laniyadapo/housepricingportfolio/blob/master/House%20Pricing%20Prediction%20EDA%20Notebook.ipynb 
 ### https://github.com/laniyadapo/housepricingportfolio/blob/master/House%20Pricing%20Prediction%20Model%20Development%20Notebook.ipynb
 ### MODEL DEVELOPMENT
-### - House Pricing Prediction Model Development Notebook 3 of 3: 
-### MODEL DEVELOPMENT    
 5. Load and Prepare Data for Modelling
    - Encoding categorical featues using dummy variable coding technique.
 
