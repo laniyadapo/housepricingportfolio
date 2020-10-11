@@ -5,9 +5,12 @@
 </p>  
 
 
-The jupyter notebook in this repo is procedural, it contains explanation of all the steps and respective findings with the use of markdowns. This readme will give a summary of the steps and results of the project.
+The jupyter notebook in this repo is procedural, it contains explanation of all the steps and respective findings with the use of markdowns. This readme will give a summary of the steps and results of the project. 
 
-### PROBLEM DEFINITION
+Project was split into 3 different notebooks for easy review.
+
+### - House Pricing Prediction Data Cleaning Notebook 1 of 3: 
+### PROBLEM DEFINITION 
 Buying a home is easy! I never feel like bursting out in tears! Said no one ever.
 Every one needs an enjoyable, happy place where you can live, laugh and learn. This is usually called HOME. Getting the correct evaluation for a house is very important as it is a major investment that is consequential for both the buyers and sellers.
 
@@ -30,15 +33,17 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
 
 #### Notebook Preparation
 - Import Libraries
-- Define Classes
+- Define Classes. 
+  - Using OOP - Objective Oriented Programming to create classes for functions used in the project.
+  - Classes are defined in "codes.py": (https://github.com/laniyadapo/housepricingportfolio/blob/master/scripts/codes.pymodule) under "scripts" folder in working directory.
 
-### DATA DISCOVERY
+### DATA DISCOVERY 
 
 #### - Obtain data
 1. Load Data 
 2. Examine and Get Insights on Data
-   - The Train data (train_features + train_target) has 1460 rows and 81 columns, 38 numerical and 43 categorical features.
-   - The Test data (test_features) has 1459 rows and 80 columns, 37 numerical and 43 categorical features. The target feature ('SalePrice) does not exist in this dataset.
+   - The Train data (independent variables + target variable) has 1460 rows and 81 columns, 38 numerical and 43 categorical features.
+   - The Test data (independent variables) has 1459 rows and 80 columns, 37 numerical and 43 categorical features. The target variable ('SalePrice) does not exist in this dataset.
 3. Clean data
    - No duplicates in data as the Id feature in bothe train and test data represent a unique house information.
    - Datasets have null values
@@ -48,15 +53,15 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
      <img src = "images/Nullvalues_Train.jpg" width ="600" /> <img src = "images/Nullvalues_Test.jpg" width ="600" />
      
      - Upon review of each feature along with the data description provided, 4 approaches were applied to deal with the null values.
-       - Columns where missing values actually mean None. Null values will be replaced with "None" in both Train & Test Data
+       - Columns where missing values actually mean None. Null values will be replaced with "None" in both Training & Testing Data
          - PoolQC, MiscFeature, Alley, Fence, FireplaceQu, GarageType, GarageFinish, GarageQual, GarageCond, BsmtQual, BsmtCond, BsmtExposure, BsmtFinType1, BsmtFinType2, MasVnrType.
-       - Numerical columns where missing values actually mean 0. Null values will be replaced with "0" in Train and Test Data respectively.
-           - Train Data : GarageYrBlt, MasVnrArea
-           - Test Data : BsmtFinSF1, BsmtFinSF2, BsmtUnfSF, TotalBsmtSF, BsmtFullBath, BsmtHalfBath, GarageYrBlt, GarageArea, GarageCars, MasVnrArea
-       - Columns that missing data is not possible and low number of missing data. Null values to be filled with column mode in Train and Test Data respectively.
-           - Train Data : Electrical
-           - Test Data : Exterior1st, Exterior2nd, Functional, KitchenQual, SaleType, Utilities
-       - Critical data that can be related with another column. Null values to be filled with mode value of the highly correlable column in both Train & Test Data.
+       - Numerical columns where missing values actually mean 0. Null values will be replaced with "0" in Training and Testing Data respectively.
+           - Training Data : GarageYrBlt, MasVnrArea
+           - Testing Data : BsmtFinSF1, BsmtFinSF2, BsmtUnfSF, TotalBsmtSF, BsmtFullBath, BsmtHalfBath, GarageYrBlt, GarageArea, GarageCars, MasVnrArea
+       - Columns that missing data is not possible and low number of missing data. Null values to be filled with column mode in Training and Testing Data respectively.
+           - Training Data : Electrical
+           - Testing Data : Exterior1st, Exterior2nd, Functional, KitchenQual, SaleType, Utilities
+       - Critical data that can be related with another column. Null values to be filled with mode value of the highly correlable column in both Training & Testing Data.
            - LotFrontage
    - Data inspected for invalid data i.e. presence of outliers.
      
@@ -68,7 +73,38 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
      - 61 houses with Sale Price higher than the upper bounds are valid data. In Residential Low Density Areas and LotAreas higher than the mean LotArea Size.
      - Based on scatter plots the following features have outliers, hence outliers were dropped from the features.
        - LotFrontage (> 200), Lot Area (> 100000), BsmtFinSF1 (> 4000), TotalBsmtSF (>4000), 1stFlrSF (> 4000)
+### - House Pricing Prediction EDA Notebook 2 of 3: 
+### DATA DISCOVERY (continued)
 4. Explore data
+   - Observations from EDA
+     - Hypothesis #1: Properties with big LotArea will be more expensive
+       - Confirmed. We see higher SalePrice as LotArea and GrLivArea increases.
+       
+       <img src = "images/LotArea.jpg" width ="300" /> <img src = "images/GrLivArea.jpg" width ="320" />
+       
+     - Hypothesis #2: Neighborhoods with low residential density will be more expensive.
+       - Confirmed. The Neighborhoods with highest SalePrices are mostly low residential density.
+
+       <p align="center">
+       <img src="images/Neighborhood.jpg"width="800" >
+       </p>
+     
+       <p align="center">
+       <img src="images/NeighborhoodvsMSZoning.jpg"width="1000" >
+       </p>
+       
+Hypothesis #3: Properties with pool will be more expensive
+Not Confirmed. Properties with Pool does not necessarily translate to high SalePrice. Pools with Excellent PoolQC have High SalePrice.
+Hypothesis #4: The older a property is the less expensive it will be
+Confirmed, there is a gradual increase the price of recently built houses but difficult to confirm what is driving the increase, inflation or time value of money.
+Hypothesis #5: Properties with bigger Garage Area will be more expensive
+Confirmed. Properties with Bigger GarageArea and Built-in GarageType are more expensive. Althought there are more houses with Attached GarageType in the data.
+Hypothesis #6: Road access to house will affect Property SalePrice
+Confirmed. There are more houses with paved road access and no alley access in the data and they typically cost more.
+Hypothesis #7: Recently sold properties will be more expensive
+Not Confirmed. No distinct correlation on the year property was sold in relation to the SalePrice.
+Hypothesis #8: Houses with more bedrooms will be more expensive
+Confirmed. Houses with more bedroom and bathrooms tend to cost more.
    - Review correlation between each numerical feature and the target variable using plots.Snapshot of produced heatmap below.
      
      <p align="center">
