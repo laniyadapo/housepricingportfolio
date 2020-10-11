@@ -178,8 +178,19 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
      <p align="center">
      <img src="images/salepricelog.jpg"width="500" height="300 >
      </p>
-    
-5. Establish a Baseline
+
+### - House Pricing Prediction Model Development Notebook 3 of 3: 
+### MODEL DEVELOPMENT    
+5. Load and Prepare Data for Modelling
+   - Encoding categorical featues using dummy variable coding technique.
+
+6. Description of Selected Models
+   The SalePrice prediction expected output is a continuous value hence we will use from the suite of regression supervised learning algorithms.
+   - A suite of regression supervised learning algorithms are selected to improve the MAE metric with the training data.
+     - Ridge and Lasso Regression - powerful techniques for creating parsmonious models in the presence of a 'large' number of features.
+     - Random Forest Regressor - improves the accuracy by reducing overfitting problem and the variance in decision trees.
+     - GradientBoostingRegressor - typically produces best predictions because it can optimize on different loss functions and provides several hyperparameter tuning options that make the function fit very flexible.    
+
    - Using all the remaining features after data cleaning and exploration, create a baseline for all the algorithm planned to be used in the project. The mean absolute error is the metric utilised.
    
    <p align="center">
@@ -188,35 +199,27 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
       
    Model | Score
    ------------ | -------------
-   LassoRegressor | MAE: ~17837
-   RandomForestRegressor | MAE: ~15713
-   GradientBoostingRegressor | MAE: ~15310
-   RidgeRegressor | MAE: ~ 17836
+   LassoRegressor | MAE: ~19492
+   RandomForestRegressor | MAE: ~15593
+   GradientBoostingRegressor | MAE: ~14474
+   RidgeRegressor | MAE: ~ 20345
       
    - The next step is to improve the MAE values.
-6. Hypothesize solutions
-   - Considering the baseline model predictions are based on data provided without extensive feature generation or model tuning we will perform some feature engineering and cross validation to improve the scores before selecting the best model.
-
-     The SalePrice prediction expected output is a continuous value hence we will use from the suite of regression supervised learning algorithms.
-   - A suite of regression supervised learning algorithms are selected to improve the MAE metric with the training data.
-     - Ridge and Lasso Regression - powerful techniques for creating parsmonious models in the presence of a 'large' number of features.
-     - Random Forest Regressor - improves the accuracy by reducing overfitting problem and the variance in decision trees.
-     - GradientBoostingRegressor - typically produces best predictions because it can optimize on different loss functions and provides several hyperparameter tuning options that make the function fit very flexible.    
-
+     
 ### MODEL DEVELOPMENT 
+- Considering the baseline model predictions are based on data provided without extensive feature generation or model tuning we will perform some feature engineering and cross validation to improve the scores before selecting the best model.
+
 1. Feature Engineering on Training data
    - Log-Tranform target variable (SalePrice) to fix skewness observed in data in section 2.4.6.1
    - Convert datatypes for the following features with integer but actually string in nature from data description. 
-     - OverallQual
+     - MSSubClass
    - Convert some of the categorical values to numeric based on data description.
-     - Neighborhood, ExterQual, BsmtQual, FireplaceQu, GarageCond, GarageQual, BsmtFinType1, HeatingQC, KitchenQual, GarageFinish, BsmtExposure
-   - Create new feature "HouseAge" using the YearBuilt feature.
-   - Normalize all numeric feature in preparation for modeling
-   - Encode all categorical features
+     - Neighborhood, ExterQual, ExternalCond, BsmtQual, FireplaceQu, GarageCond, GarageQual, BsmtCond, BsmtFinType1, BsmtFinType2, HeatingQC, KitchenQual, GarageFinish, BsmtExposure, CentralAir, PavedDrive, PoolQC.
+   - Create new feature "HouseAge" using the YearBuilt and YearRemodAdd features.
+   - Normalize all numeric feature in preparation for modeling.
+   - Encode all categorical features using dummy variable coding technique.
    - Split transformed data into train and test data for use during model creation and evaluation process.
-2. Create models
-   - All models are created in this section
-   - Hypertuning of models were done using the GridSearch method.
+2. Hypertuning of models were done using the GridSearch method.
 3. Evaluate Models 
    - Each model was evaluated with cross validation technique using optimal parameters derived.
      
@@ -226,10 +229,10 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
 
 Model | Score
 ------------ | -------------
-LassoRegressor | MAE: ~0.137592
-RandomForestRegressor | MAE: ~0.100751
-GradientBoostingRegressor | MAE: ~0.097434
-RidgeRegressor | MAE: ~ 0.095744 
+LassoRegressor | MAE: ~0.086537
+RandomForestRegressor | MAE: ~0.099186
+GradientBoostingRegressor | MAE: ~0.090131
+RidgeRegressor | MAE: ~ 0.089059 
 4. Test models
    - Models were tested using the split test data from the transformed merged data.
 
@@ -239,26 +242,20 @@ RidgeRegressor | MAE: ~ 0.095744
 
 Model | Score
 ------------ | -------------
-LassoRegressor | MAE: ~0.129181
-RandomForestRegressor | MAE: ~0.089335
-GradientBoostingRegressor | MAE: ~0.089001
-RidgeRegressor | MAE: ~ 0.093270 
+LassoRegressor | MAE: ~0.080010
+RandomForestRegressor | MAE: ~0.089148
+GradientBoostingRegressor | MAE: ~0.082967
+RidgeRegressor | MAE: ~ 0.082026 
 
 5. Select best model
-   - GradientBoostingRegressor model has the lowest MSE, hence it is selected for the SalePrice prediction with the test dataset
+   - Lasso Regression model has the lowest MSE, hence it is selected for the SalePrice prediction with the test dataset
 
 ### MODEL DEPLOYMENT
 
 1. Train best model selected on the entire training data.
 2. Score the Test Dataset
-   - Create new feature "HouseAge" using the YearBuilt feature.
-   - Convert datatypes for the following features with integer but actually string in nature from data description. 
-     - OverallQual
-   - Convert some of the categorical values to numeric based on data description.
-     - Neighborhood, ExterQual, BsmtQual, FireplaceQu, GarageCond, GarageQual, BsmtFinType1, HeatingQC, KitchenQual, GarageFinish, BsmtExposure
-   - Encode all categorical features
-   - Normalize all numeric feature in preparation for modeling
-   - Confirm test data matches the shape of the train dataset 
+   - Perform same level of feature engineering performed on the Training set data earlier in the project on the Testing Data.
+   - Confirm the shape of the testing and traing data matches.
    - Deploy the model on the test data to predict SalePrice
    - Combine the test data 'Id' and the predicted SalePrice into a dataframe
    - Combine the original test data with the predicted SalePrice and export to csv as a deliverable
