@@ -168,7 +168,7 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
    - Review skewness and distributions of the numerical features and target variable in training data.
      
       <p align="center">
-     <img src="images/num_skewness.jpg"width="600" >
+     <img src="images/numerical_skewness.jpg"width="600" >
      </p>
      
      - There are 3 features identified with uni-modal, skewed distributions which could be considered for log transformation,
