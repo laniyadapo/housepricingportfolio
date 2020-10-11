@@ -9,7 +9,8 @@ The jupyter notebook in this repo is procedural, it contains explanation of all 
 
 Project was split into 3 different notebooks for easy review.
 
-### - House Pricing Prediction Data Cleaning Notebook 1 of 3: 
+### - House Pricing Prediction Data Cleaning Notebook 1 of 3: https://github.com/laniyadapo/housepricingportfolio/blob/master/House%20Pricing%20Prediction%20Data%20Cleaning%20Notebook.ipynb
+
 ### PROBLEM DEFINITION 
 Buying a home is easy! I never feel like bursting out in tears! Said no one ever.
 Every one needs an enjoyable, happy place where you can live, laugh and learn. This is usually called HOME. Getting the correct evaluation for a house is very important as it is a major investment that is consequential for both the buyers and sellers.
@@ -73,7 +74,7 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
      - 61 houses with Sale Price higher than the upper bounds are valid data. In Residential Low Density Areas and LotAreas higher than the mean LotArea Size.
      - Based on scatter plots the following features have outliers, hence outliers were dropped from the features.
        - LotFrontage (> 200), Lot Area (> 100000), BsmtFinSF1 (> 4000), TotalBsmtSF (>4000), 1stFlrSF (> 4000)
-### - House Pricing Prediction EDA Notebook 2 of 3: 
+### - House Pricing Prediction EDA Notebook 2 of 3: https://github.com/laniyadapo/housepricingportfolio/blob/master/House%20Pricing%20Prediction%20EDA%20Notebook.ipynb 
 ### DATA DISCOVERY (continued)
 4. Explore data
    - Observations from EDA
@@ -179,7 +180,7 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
      <img src="images/salepricelog.jpg"width="500" height="300 >
      </p>
 
-### - House Pricing Prediction Model Development Notebook 3 of 3: 
+### - House Pricing Prediction Model Development Notebook 3 of 3: https://github.com/laniyadapo/housepricingportfolio/blob/master/House%20Pricing%20Prediction%20Model%20Development%20Notebook.ipynb
 ### MODEL DEVELOPMENT    
 5. Load and Prepare Data for Modelling
    - Encoding categorical featues using dummy variable coding technique.
