@@ -176,13 +176,13 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
        - SalePrice, LotArea & GrLivArea
      - Skew of SalePrice and Log-Transformed SalePrice in training data explored.
      
-     <p align="center">
-     <img src="images/salepricelog.jpg"width="500" height="300 >
-     </p>
+       <p align="center">
+       <img src="images/salepricelog.jpg"width="500" height="300 >
+       </p>
 
-### House Pricing Prediction Model Development Notebook 3 of 3 
-### MODEL DEPLOYMENT
 
+### - House Pricing Prediction Model Development Notebook 3 of 3: https://github.com/laniyadapo/housepricingportfolio/blob/master/House%20Pricing%20Prediction%20Data%20Cleaning%20Notebook.ipynb
+### House Pricing Prediction Model Development Notebook 3 of 3 MODEL DEPLOYMENT
 5. Load and Prepare Data for Modelling
    - Encoding categorical featues using dummy variable coding technique.
 6. Description of Selected Models
