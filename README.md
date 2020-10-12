@@ -168,7 +168,7 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
    
    - Review skewness and distributions of the numerical features and target variable in training data.
      
-      <p align="center">
+     <p align="center">
      <img src="images/numerical_skewness.jpg"width="600" >
      </p>
      
@@ -179,11 +179,10 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
      <p align="center">
      <img src="images/salepricelog.jpg"width="500" height="300 >
      </p>
-     - Next stage is to go into modeling.
 
- 
-### - House Pricing Prediction Model Development Notebook 3: https://github.com/laniyadapo/housepricingportfolio/blob/master/House%20Pricing%20Prediction%20Model%20Development%20Notebook.ipynb
-### MODEL DEVELOPMENT
+### House Pricing Prediction Model Development Notebook 3 of 3 
+### MODEL DEPLOYMENT
+
 5. Load and Prepare Data for Modelling
    - Encoding categorical featues using dummy variable coding technique.
 6. Description of Selected Models
