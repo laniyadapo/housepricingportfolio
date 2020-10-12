@@ -230,8 +230,8 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
 Model | Score
 ------------ | -------------
 LassoRegressor | MAE: ~0.086537
-RandomForestRegressor | MAE: ~0.099186
-GradientBoostingRegressor | MAE: ~0.090131
+RandomForestRegressor | MAE: ~0.098423
+GradientBoostingRegressor | MAE: ~0.089608
 RidgeRegressor | MAE: ~ 0.089059 
 4. Test models
    - Models were tested using the split test data.
@@ -243,12 +243,12 @@ RidgeRegressor | MAE: ~ 0.089059
 Model | Score
 ------------ | -------------
 LassoRegressor | MAE: ~0.080010
-RandomForestRegressor | MAE: ~0.089148
-GradientBoostingRegressor | MAE: ~0.082967
+RandomForestRegressor | MAE: ~0.089347
+GradientBoostingRegressor | MAE: ~0.082588
 RidgeRegressor | MAE: ~ 0.082026 
 
 5. Select best model
-   - Lasso Regression model has the lowest MSE, hence it is selected for the SalePrice prediction with the test dataset
+   - Lasso Regression model has the lowest MAE, hence it is selected for the SalePrice prediction with the test dataset
 
 ### MODEL DEPLOYMENT
 
