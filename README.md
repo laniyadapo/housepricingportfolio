@@ -55,15 +55,9 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
      
      - Upon review of each feature along with the data description provided, 4 approaches were applied to deal with the null values.
        - Columns where missing values actually mean None. Null values will be replaced with "None" in both Training & Testing Data
-         - PoolQC, MiscFeature, Alley, Fence, FireplaceQu, GarageType, GarageFinish, GarageQual, GarageCond, BsmtQual, BsmtCond, BsmtExposure, BsmtFinType1, BsmtFinType2, MasVnrType.
        - Numerical columns where missing values actually mean 0. Null values will be replaced with "0" in Training and Testing Data respectively.
-           - Training Data : GarageYrBlt, MasVnrArea
-           - Testing Data : BsmtFinSF1, BsmtFinSF2, BsmtUnfSF, TotalBsmtSF, BsmtFullBath, BsmtHalfBath, GarageYrBlt, GarageArea, GarageCars, MasVnrArea
        - Columns that missing data is not possible and low number of missing data. Null values to be filled with column mode in Training and Testing Data respectively.
-           - Training Data : Electrical
-           - Testing Data : Exterior1st, Exterior2nd, Functional, KitchenQual, SaleType, Utilities
        - Critical data that can be related with another column. Null values to be filled with mode value of the highly correlable column in both Training & Testing Data.
-           - LotFrontage
    - Data inspected for invalid data i.e. presence of outliers.
      
       <p align="center">
@@ -72,8 +66,7 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
      
      - No SalePrice below the lower bounds in the training data
      - 61 houses with Sale Price higher than the upper bounds are valid data. In Residential Low Density Areas and LotAreas higher than the mean LotArea Size.
-     - Based on scatter plots the following features have outliers, hence outliers were dropped from the features.
-       - LotFrontage (> 200), Lot Area (> 100000), BsmtFinSF1 (> 4000), TotalBsmtSF (>4000), 1stFlrSF (> 4000)
+
 ### - House Pricing Prediction EDA Notebook 2 of 3: https://github.com/laniyadapo/housepricingportfolio/blob/master/House%20Pricing%20Prediction%20EDA%20Notebook.ipynb 
 ### DATA DISCOVERY (continued)
 4. Explore data
@@ -149,22 +142,16 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
      <img src="images/num_corr.jpg"width="600" height="600">
      </p>
      
-     - The heat map shows OverallQual, GrLivArea, FullBath, GarageCars have the highest correlation to SalePrice in that order
-     - Drop the following featurs with high multicolinearity with other features.
-       - GarageArea, 1stFlrSF, GarageYrBlt, TotRmsAbvGrd.
-     - Drop features with less than 30% correlation to the target variable (SalePrice)
-       - BsmtFinSF2, LowQualFinSF, BsmtHalfBath, 3SsnPorch, MiscVal, MoSold, YrSold.
+     - Drop features with high multicolinearity with other features.
+     - Drop features with low correlation to the target variable (SalePrice)
    - Review correlation between all categorical features respectively by using label encoding with the mean SalePrice. Snapshot of produced heatmap below. 
      
      <p align="center">
      <img src="images/cat_corr.jpg"width="700" height="700">
      </p>
      
-     - The heat map shows Neighborhood, ExternalQual, BsmtQual, KitchenQual have the highest correlation to SalePrice
      - Drop Features with multicolinealirity with other features.
-       - SaleCondition & Exterior2nd
-     - Drop features with less than 30% correlation to the target variable (SalePrice)
-       - Utilities and LandSlope
+     - Drop features with low correlation to the target variable (SalePrice)
    
    - Review skewness and distributions of the numerical features and target variable in training data.
      
@@ -187,11 +174,6 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
    - Encoding categorical featues using dummy variable coding technique.
 6. Description of Selected Models
    The SalePrice prediction expected output is a continuous value hence we will use from the suite of regression supervised learning algorithms.
-   - A suite of regression supervised learning algorithms are selected to improve the MAE metric with the training data.
-     - Ridge and Lasso Regression - powerful techniques for creating parsmonious models in the presence of a 'large' number of features.
-     - Random Forest Regressor - improves the accuracy by reducing overfitting problem and the variance in decision trees.
-     - GradientBoostingRegressor - typically produces best predictions because it can optimize on different loss functions and provides several hyperparameter tuning options that make the function fit very flexible.    
-
    - Using all the remaining features after data cleaning and exploration, create a baseline for all the algorithm planned to be used in the project. The mean absolute error is the metric utilised.
    
    <p align="center">
@@ -212,9 +194,7 @@ With 79 explanatory variables describing (almost) every aspect of residential ho
 1. Feature Engineering on Training data
    - Log-Tranform target variable (SalePrice) to fix skewness observed in data in section 2.4.6.1
    - Convert datatypes for the following features with integer but actually string in nature from data description. 
-     - MSSubClass
    - Convert some of the categorical values to numeric based on data description.
-     - Neighborhood, ExterQual, ExternalCond, BsmtQual, FireplaceQu, GarageCond, GarageQual, BsmtCond, BsmtFinType1, BsmtFinType2, HeatingQC, KitchenQual, GarageFinish, BsmtExposure, CentralAir, PavedDrive, PoolQC.
    - Create new feature "HouseAge" using the YearBuilt and YearRemodAdd features.
    - Normalize all numeric feature in preparation for modeling.
    - Encode all categorical features using dummy variable coding technique.
